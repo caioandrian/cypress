@@ -15,6 +15,25 @@ describe('Cypress Integration API', () => {
 
     beforeEach(()=>{
         cy.resetAppByApi(token);
+        
+    })
+
+    it.only('Intercept create an account', () => {
+
+        cy.visit('https://barrigareact.wcaquino.me/contas')
+
+        cy.intercept('POST', 'https://barrigareact.wcaquino.me/contas', (req) => {
+            req.reply( res => {
+                console.log(res)
+                res.body = {'message': 'oiiii'}
+            })
+        }).as('response')
+
+        cy.get('@response').then((res) => {
+            console.log(res)
+        })
+        //após o login deve retornar um token para o cliente
+        //em algumas aplicacoes mais novas poderia ser `bearer ${token}`
     })
 
     it('Should create an account', () => {

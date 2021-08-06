@@ -1,18 +1,26 @@
 {
   "name": "curso-crypress",
   "version": "1.0.0",
-  "description": "",
+  "description": "conteúdo do curso realizado na Udemy",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress:open": "cypress open"
+    "cy:open": "cypress open"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^3.6.0",
+    "cypress": "^8.0.0",
     "cypress-localstorage-commands": "^1.2.1",
     "cypress-xpath": "^1.6.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caioandrian/curso-cypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caioandrian/curso-cypress/issues"
+  },
+  "homepage": "https://github.com/caioandrian/curso-cypress#readme"
 }
