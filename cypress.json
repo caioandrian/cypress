@@ -4,5 +4,8 @@
     "viewportHeight": 880,
     "viewportWidth": 1520,
     "chromeWebSecurity": false,
-    "numTestsKeptInMemory": 50
+    "numTestsKeptInMemory": 50,
+    "testFiles": "**/*.{feature,features}*",
+    "screenshotsFolder": "report/screenshots",
+    "video": false
 }

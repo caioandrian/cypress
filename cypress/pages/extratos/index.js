@@ -4,12 +4,15 @@ const el = require('./elements').ELEMENTS;
 
 export class Extratos extends Base {
 
-    static validaQuantidadeDeTransacoes(qtde, option = ""){
-        super.validateElementLenght(el.EXTRATO.LINHAS, qtde, option)
+    static validaQuantidadeDeTransacoes(qtde, operador = ""){
+        super.validateElementLenght(el.EXTRATO.LINHAS, qtde, operador)
     }
 
     static validaUltimaTransacaoRealizada(descricao, valor){
-        super.getElementByXPath(el.EXTRATO.FN_XP_BUSCA_ELEMENTO(descricao, valor)).should('exist')
+        let valorApresentado = parseFloat(valor).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        //let valorApresentado = parseFloat(valor).toLocaleString('pt-br', {minimumFractionDigits: 2});
+
+        super.getElementByXPath(el.EXTRATO.FN_XP_BUSCA_ELEMENTO(descricao, valorApresentado)).should('be.visible')
     }
 
     static editarTransacao(descricaoTransacao){

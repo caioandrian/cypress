@@ -31,7 +31,7 @@ describe('Cypress Integration API', () => {
     })
 
     it('Deve atualizar o nome de uma conta', () => {
-        API.atualizarUmaConta('Conta para alterar').then( (res) => { console.log(res) }).as('response')
+        API.atualizarUmaConta('Conta para alterar').as('response')
 
         cy.get('@response').its('status').should('be.equal', 200)
         cy.get('@response').its('body.nome').should('be.eq', 'conta alterada via rest')

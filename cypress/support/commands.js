@@ -24,8 +24,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
-import "cypress-localstorage-commands"
-
 Cypress.Commands.add('clickAlert', (locator, message) => {
     cy.on('window:alert', msg => {
         console.log(msg)
@@ -45,4 +43,16 @@ Cypress.Commands.overwrite('request', (originalFn, ...options) => {
     }
 
     return originalFn(...options)
+})
+
+Cypress.Commands.add('stepNotImplemented', () => { 
+    console.log('O step não foi implementado!')
+    cy.log('O step não foi implementado!')
+})
+
+Cypress.Commands.overwrite('type', (originalFn, subject, str, options) => {
+    if (str !== '') {
+        return originalFn(subject, str, options)
+    }
+    return subject
 })
