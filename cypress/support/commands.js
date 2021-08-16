@@ -26,8 +26,6 @@
 
 import "cypress-localstorage-commands"
 
-import loc from './locators'
-
 Cypress.Commands.add('clickAlert', (locator, message) => {
     cy.on('window:alert', msg => {
         console.log(msg)
@@ -35,56 +33,6 @@ Cypress.Commands.add('clickAlert', (locator, message) => {
     })
 
     cy.get(locator).click()
-})
-
-Cypress.Commands.add('login', (user, passwd) => {
-    cy.visit('https://barrigareact.wcaquino.me')
-    cy.get(loc.LOGIN.USER).type(user)
-    cy.get(loc.LOGIN.PASSWORD).type(passwd)
-    cy.get(loc.LOGIN.BTN_LOGIN).click()
-    cy.get(loc.MESSAGE).should('contain', 'Bem vindo')
-})
-
-Cypress.Commands.add('resetApp', () => {
-    cy.get(loc.MENU.SETTINGS).click()
-    cy.get(loc.MENU.RESETAR).click()
-})
-
-Cypress.Commands.add('getToken', (user, passwd) => {
-    cy.request({
-        url: '/signin',
-        method: 'POST',
-        body: {
-            email: user, 
-            redirecionar: false,
-            senha: passwd
-        }
-    }).its('body.token').should('not.be.empty')
-        .then(token => {
-            Cypress.env('token', token)
-            return token;
-        })
-})
-
-Cypress.Commands.add('resetAppByApi', (token) => {
-    cy.request({
-        url: '/reset',
-        method: 'GET',
-        headers: { Authorization: `JWT ${token}`}
-    }).its('status').should('be.eq', 200)
-})
-
-Cypress.Commands.add('getContaByName', (token, nomeconta) => {
-    cy.request({
-        method: 'GET',
-        url: '/contas',
-        headers: {Authorization: `JWT ${token}`},
-        qs:{
-            nome: nomeconta
-        }
-    }).then(res => {
-        return res.body[0].id;
-    })
 })
 
 Cypress.Commands.overwrite('request', (originalFn, ...options) => {

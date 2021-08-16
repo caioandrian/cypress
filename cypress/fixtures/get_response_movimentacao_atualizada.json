@@ -13,7 +13,7 @@
         "observacao":null,
         "tipo":"DESP","data_transacao":"2020-08-15T03:00:00.000Z",
         "data_pagamento":"2020-08-15T03:00:00.000Z",
-        "valor":"123.00",
+        "valor":"900.00",
         "status":true,
         "conta_id":1,
         "usuario_id":10899,

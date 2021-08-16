@@ -1,3 +1,8 @@
 {
-    "baseUrl":  "https://barrigarest.wcaquino.me"
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "experimentalStudio": true,
+    "viewportHeight": 880,
+    "viewportWidth": 1520,
+    "chromeWebSecurity": false,
+    "numTestsKeptInMemory": 50
 }

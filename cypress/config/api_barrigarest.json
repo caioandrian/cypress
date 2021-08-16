@@ -1,0 +1,8 @@
+{
+    "baseUrl": "https://barrigarest.wcaquino.me", 
+    "env":{
+        "global_timeout": 30000,
+        "environment": "api_barrigarest.json",
+        "MockRequest": true
+    }
+}
