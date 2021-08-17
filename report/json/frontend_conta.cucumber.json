@@ -37,7 +37,7 @@
             "name": "que esteja logado com uma conta ativa",
             "result": {
               "status": "passed",
-              "duration": 6122000000
+              "duration": 7655000000
             }
           },
           {
@@ -47,7 +47,7 @@
             "name": "que esteja com o banco de dados resetado",
             "result": {
               "status": "passed",
-              "duration": 3361000000
+              "duration": 3474000000
             }
           },
           {
@@ -57,7 +57,7 @@
             "name": "criar uma conta com um nome válido",
             "result": {
               "status": "passed",
-              "duration": 755000000
+              "duration": 884000000
             }
           },
           {
@@ -67,7 +67,7 @@
             "name": "deverá apresentar a mensagem \"Conta inserida com sucesso\"",
             "result": {
               "status": "passed",
-              "duration": 2132000000
+              "duration": 2193000000
             }
           },
           {
@@ -77,7 +77,7 @@
             "name": "deverá deslogar da conta",
             "result": {
               "status": "passed",
-              "duration": 3365000000
+              "duration": 3437000000
             }
           }
         ]
@@ -106,7 +106,7 @@
             "name": "que esteja logado com uma conta ativa",
             "result": {
               "status": "passed",
-              "duration": 3813000000
+              "duration": 9390000000
             }
           },
           {
@@ -116,7 +116,7 @@
             "name": "que esteja com o banco de dados resetado",
             "result": {
               "status": "passed",
-              "duration": 3343000000
+              "duration": 3305000000
             }
           },
           {
@@ -126,7 +126,7 @@
             "name": "que tenha uma conta cadastrada com o nome \"Carteira\"",
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 6000000
             }
           },
           {
@@ -136,7 +136,7 @@
             "name": "criar uma conta com um nome que já existe no sistema",
             "result": {
               "status": "passed",
-              "duration": 614000000
+              "duration": 543000000
             }
           },
           {
@@ -146,7 +146,7 @@
             "name": "deverá apresentar a mensagem \"Erro: Error: Request failed with status code 400\"",
             "result": {
               "status": "passed",
-              "duration": 2134000000
+              "duration": 2140000000
             }
           },
           {
@@ -156,7 +156,7 @@
             "name": "deverá deslogar da conta",
             "result": {
               "status": "passed",
-              "duration": 3368000000
+              "duration": 3355000000
             }
           }
         ]

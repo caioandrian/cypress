@@ -37,14 +37,14 @@
             "name": "que esteja com um token válido",
             "result": {
               "status": "passed",
-              "duration": 2032000000
+              "duration": 1568000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
             "line": 10,
-            "name": "tenha resetado o banco de dados",
+            "name": "tenha resetado o banco de dados pela rota",
             "result": {
               "status": "passed",
               "duration": 213000000
@@ -57,7 +57,7 @@
             "name": "criar uma nova conta com o nome \"Conta qualquer 5\"",
             "result": {
               "status": "passed",
-              "duration": 184000000
+              "duration": 284000000
             }
           },
           {
@@ -67,7 +67,7 @@
             "name": "deve obter como resposta o schema \"api/post_conta_movimentacao\" com status 201",
             "result": {
               "status": "passed",
-              "duration": 47000000
+              "duration": 38000000
             }
           },
           {
@@ -77,7 +77,7 @@
             "name": "deve apresentar no corpo da resposta o conteúdo \"da conta\"",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 9000000
             }
           }
         ]
@@ -106,17 +106,17 @@
             "name": "que esteja com um token válido",
             "result": {
               "status": "passed",
-              "duration": 485000000
+              "duration": 571000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
             "line": 10,
-            "name": "tenha resetado o banco de dados",
+            "name": "tenha resetado o banco de dados pela rota",
             "result": {
               "status": "passed",
-              "duration": 207000000
+              "duration": 206000000
             }
           },
           {
@@ -126,7 +126,7 @@
             "name": "criar uma nova conta com o nome \"Conta para alterar\"",
             "result": {
               "status": "passed",
-              "duration": 263000000
+              "duration": 214000000
             }
           },
           {
@@ -136,7 +136,7 @@
             "name": "deve obter como resposta o schema \"api/post_conta_movimentacao\" com status 400",
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 19000000
             }
           },
           {
@@ -152,10 +152,10 @@
         ]
       },
       {
-        "id": "api;atualizar-nome-de-uma-conta",
+        "id": "api;atualizar-nome-de-uma-conta-por-id",
         "keyword": "Scenario",
         "line": 23,
-        "name": "Atualizar nome de uma conta",
+        "name": "Atualizar nome de uma conta por ID",
         "tags": [
           {
             "name": "@funcionalidade_api",
@@ -175,17 +175,17 @@
             "name": "que esteja com um token válido",
             "result": {
               "status": "passed",
-              "duration": 461000000
+              "duration": 453000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
             "line": 10,
-            "name": "tenha resetado o banco de dados",
+            "name": "tenha resetado o banco de dados pela rota",
             "result": {
               "status": "passed",
-              "duration": 238000000
+              "duration": 229000000
             }
           },
           {
@@ -205,7 +205,7 @@
             "name": "deve obter como resposta o schema \"api/put_conta_movimentacao\" com status 200",
             "result": {
               "status": "passed",
-              "duration": 12000000
+              "duration": 18000000
             }
           },
           {
@@ -215,7 +215,7 @@
             "name": "deve apresentar no corpo da resposta o conteúdo \"da conta\"",
             "result": {
               "status": "passed",
-              "duration": 6000000
+              "duration": 4000000
             }
           }
         ]
@@ -244,17 +244,17 @@
             "name": "que esteja com um token válido",
             "result": {
               "status": "passed",
-              "duration": 1010000000
+              "duration": 457000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
             "line": 10,
-            "name": "tenha resetado o banco de dados",
+            "name": "tenha resetado o banco de dados pela rota",
             "result": {
               "status": "passed",
-              "duration": 206000000
+              "duration": 195000000
             }
           },
           {
@@ -264,7 +264,7 @@
             "name": "criar uma nova transação na conta \"Conta para alterar\"",
             "result": {
               "status": "passed",
-              "duration": 404000000
+              "duration": 455000000
             }
           },
           {
@@ -274,7 +274,7 @@
             "name": "deve obter como resposta o schema \"api/post_transacao\" com status 201",
             "result": {
               "status": "passed",
-              "duration": 14000000
+              "duration": 16000000
             }
           },
           {
@@ -284,16 +284,16 @@
             "name": "deve apresentar no corpo da resposta o conteúdo \"da transação\"",
             "result": {
               "status": "passed",
-              "duration": 8000000
+              "duration": 4000000
             }
           }
         ]
       },
       {
-        "id": "api;atualizar-o-status-de-uma-transação",
+        "id": "api;atualizar-o-status-de-uma-transação-por-id",
         "keyword": "Scenario",
         "line": 35,
-        "name": "Atualizar o status de uma transação",
+        "name": "Atualizar o status de uma transação por ID",
         "tags": [
           {
             "name": "@funcionalidade_api",
@@ -313,17 +313,17 @@
             "name": "que esteja com um token válido",
             "result": {
               "status": "passed",
-              "duration": 496000000
+              "duration": 495000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
             "line": 10,
-            "name": "tenha resetado o banco de dados",
+            "name": "tenha resetado o banco de dados pela rota",
             "result": {
               "status": "passed",
-              "duration": 205000000
+              "duration": 215000000
             }
           },
           {
@@ -333,7 +333,7 @@
             "name": "que o saldo da conta \"Conta para saldo\" esteja com \"534.00\"",
             "result": {
               "status": "passed",
-              "duration": 207000000
+              "duration": 192000000
             }
           },
           {
@@ -343,7 +343,7 @@
             "name": "atualizar o status da transação com a descrição \"Movimentacao 1, calculo saldo\"",
             "result": {
               "status": "passed",
-              "duration": 400000000
+              "duration": 419000000
             }
           },
           {
@@ -353,7 +353,7 @@
             "name": "deve obter como resposta o schema \"api/put_transacao\" com status 200",
             "result": {
               "status": "passed",
-              "duration": 24000000
+              "duration": 11000000
             }
           },
           {
@@ -363,16 +363,16 @@
             "name": "deverá apresentar o saldo atualizado na conta \"Conta para saldo\" com valor \"4034.00\"",
             "result": {
               "status": "passed",
-              "duration": 287000000
+              "duration": 187000000
             }
           }
         ]
       },
       {
-        "id": "api;deletar-uma-transação",
+        "id": "api;deletar-uma-transação-por-id",
         "keyword": "Scenario",
         "line": 42,
-        "name": "Deletar uma transação",
+        "name": "Deletar uma transação por ID",
         "tags": [
           {
             "name": "@funcionalidade_api",
@@ -392,17 +392,17 @@
             "name": "que esteja com um token válido",
             "result": {
               "status": "passed",
-              "duration": 515000000
+              "duration": 511000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
             "line": 10,
-            "name": "tenha resetado o banco de dados",
+            "name": "tenha resetado o banco de dados pela rota",
             "result": {
               "status": "passed",
-              "duration": 200000000
+              "duration": 204000000
             }
           },
           {
@@ -412,7 +412,7 @@
             "name": "deletar a transação com a descrição \"Movimentacao para exclusao\"",
             "result": {
               "status": "passed",
-              "duration": 409000000
+              "duration": 407000000
             }
           },
           {
@@ -422,7 +422,7 @@
             "name": "deve obter como resposta o schema \"api/delete_transacao\" com status 204",
             "result": {
               "status": "passed",
-              "duration": 22000000
+              "duration": 13000000
             }
           }
         ]
