@@ -5,7 +5,7 @@ Funcionalidade: API
     Como cliente da aplicação
     Quero ter acesso a todas as rotas acessíveis para o meu nível de usuário
 
-    Contexto: Criar
+    Contexto:
         Dado que esteja com um token válido
         E tenha resetado o banco de dados pela rota
 
