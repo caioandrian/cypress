@@ -1,15 +1,11 @@
 /// <reference types="cypress" />
 import {Given, When, Then, After, Before, And} from 'cypress-cucumber-preprocessor/steps'
 
-import Base from '../../pages/base_page'
 import {Head} from '../../pages/head'
 import {Conta} from '../../pages/contas'
 import {Movimentacao} from '../../pages/movimentacoes'
 import {Extratos} from '../../pages/extratos'
 import {Home} from '../../pages/home'
-import {Login} from '../../pages/login'
-
-import buildEnv from '../../support/buildEnv'
 
 Given(`que esteja na página de extrato`, () => {
     Home.validaSaldoConta('Conta para saldo', '534,00')
@@ -20,12 +16,12 @@ When('criar uma nova transação com {string}, {string}, {string} e {string}', (
     if(Cypress.env('MockRequest')){
         cy.intercept('POST','/transacoes',{
             statusCode: 201,
-            fixture: 'post_response_nova_transacao.json'
+            fixture: 'mock/post_response_nova_transacao.json'
         }).as('postMovimentacao')
 
         cy.intercept('GET','/extrato/**',{
             statusCode: 200,
-            fixture: 'get_response_movimentacao_atualizada.json'
+            fixture: 'mock/get_response_movimentacao_atualizada.json'
         }).as('movimentacoes')
     }
 
@@ -42,12 +38,12 @@ When(`editar a transação com a descrição {string} referente a conta {string}
     if(Cypress.env('MockRequest')){
         cy.intercept('PUT','/transacoes/**',{
             statusCode: 200,
-            fixture: 'put_response_transacao_atualizada.json'
+            fixture: 'mock/put_response_transacao_atualizada.json'
         }).as('postMovimentacao')
 
         cy.intercept('GET','/transacoes/**',{
             statusCode: 200,
-            fixture: 'get_response_transacao.json'
+            fixture: 'mock/get_response_transacao.json'
         }).as('getMovimentacao')
     }
     
@@ -68,7 +64,7 @@ When(`remover a transação com a descrição {string}`, (descricao_transacao) =
     if(Cypress.env('MockRequest')){
         cy.intercept('GET','/extrato/**',{
             statusCode: 200,
-            fixture: 'get_response_lista_atualizada_extratos.json'
+            fixture: 'mock/get_response_lista_atualizada_extratos.json'
         }).as('getMovimentacoesAtualizadas')
     }
    
@@ -91,7 +87,7 @@ Then(`apresentar o saldo atualizado da conta {string} com valor de {string}`, (n
     if(Cypress.env('MockRequest')){
         cy.intercept('GET','/saldo',{
             statusCode: 200,
-            fixture: 'get_response_transacao_saldo_atualizado.json'
+            fixture: 'mock/get_response_transacao_saldo_atualizado.json'
         }).as('saldoAtualizado')
     }
     

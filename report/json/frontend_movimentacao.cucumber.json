@@ -16,7 +16,7 @@
       {
         "id": "movimentação;criar-uma-nova-transação",
         "keyword": "Scenario",
-        "line": 19,
+        "line": 21,
         "name": "Criar uma nova transação",
         "tags": [
           {
@@ -25,7 +25,7 @@
           },
           {
             "name": "@criar_transacao",
-            "line": 11
+            "line": 12
           }
         ],
         "type": "scenario",
@@ -37,47 +37,67 @@
             "name": "que esteja logado com uma conta ativa",
             "result": {
               "status": "passed",
-              "duration": 13081000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Quando ",
-            "line": 13,
-            "name": "criar uma nova transação com \"Transação de Exemplo\", \"900.50\", \"Qualquer Pessoa\" e \"Carteira\"",
-            "result": {
-              "status": "passed",
-              "duration": 1783000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Então ",
-            "line": 14,
-            "name": "deverá apresentar a mensagem \"sucesso\"",
-            "result": {
-              "status": "passed",
-              "duration": 2152000000
+              "duration": 6576000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
-            "line": 15,
-            "name": "deverá apresentar um total \"=\" a 7 transações na página de extratos",
+            "line": 10,
+            "name": "que esteja com o banco de dados resetado",
             "result": {
               "status": "passed",
-              "duration": 33000000
+              "duration": 3346000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 14,
+            "name": "criar uma nova transação com \"Transação de Exemplo\", \"900.50\", \"Qualquer Pessoa\" e \"Carteira\"",
+            "result": {
+              "status": "passed",
+              "duration": 1903000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 15,
+            "name": "deverá apresentar a mensagem \"sucesso\"",
+            "result": {
+              "status": "passed",
+              "duration": 2141000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
             "line": 16,
+            "name": "deverá apresentar um total \"=\" a 7 transações na página de extratos",
+            "result": {
+              "status": "passed",
+              "duration": 28000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 17,
             "name": "deverá encontrar a transação criada com a descrição \"Transação de Exemplo\" e \"900.50\"",
             "result": {
               "status": "passed",
-              "duration": 21000000
+              "duration": 27000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 18,
+            "name": "deverá deslogar da conta",
+            "result": {
+              "status": "passed",
+              "duration": 3383000000
             }
           }
         ]
@@ -85,7 +105,7 @@
       {
         "id": "movimentação;editar-uma-transação",
         "keyword": "Scenario",
-        "line": 22,
+        "line": 24,
         "name": "Editar uma transação",
         "tags": [
           {
@@ -94,7 +114,7 @@
           },
           {
             "name": "@editar_transacao",
-            "line": 21
+            "line": 23
           }
         ],
         "type": "scenario",
@@ -106,47 +126,67 @@
             "name": "que esteja logado com uma conta ativa",
             "result": {
               "status": "passed",
-              "duration": 3854000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Dado ",
-            "line": 23,
-            "name": "que esteja na página de extrato",
-            "result": {
-              "status": "passed",
-              "duration": 165000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Quando ",
-            "line": 24,
-            "name": "editar a transação com a descrição \"Movimentacao 1, calculo saldo\" referente a conta \"Conta para saldo\"",
-            "result": {
-              "status": "passed",
-              "duration": 1624000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Então ",
-            "line": 25,
-            "name": "deverá apresentar a mensagem \"sucesso\"",
-            "result": {
-              "status": "passed",
-              "duration": 2136000000
+              "duration": 3781000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
+            "line": 10,
+            "name": "que esteja com o banco de dados resetado",
+            "result": {
+              "status": "passed",
+              "duration": 3335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 25,
+            "name": "que esteja na página de extrato",
+            "result": {
+              "status": "passed",
+              "duration": 219000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
             "line": 26,
+            "name": "editar a transação com a descrição \"Movimentacao 1, calculo saldo\" referente a conta \"Conta para saldo\"",
+            "result": {
+              "status": "passed",
+              "duration": 1656000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 27,
+            "name": "deverá apresentar a mensagem \"sucesso\"",
+            "result": {
+              "status": "passed",
+              "duration": 2156000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 28,
             "name": "apresentar o saldo atualizado da conta \"Conta para saldo\" com valor de \"4.034,00\"",
             "result": {
               "status": "passed",
-              "duration": 215000000
+              "duration": 271000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 29,
+            "name": "deverá deslogar da conta",
+            "result": {
+              "status": "passed",
+              "duration": 3386000000
             }
           }
         ]
@@ -154,7 +194,7 @@
       {
         "id": "movimentação;excluir-uma-nova-transação",
         "keyword": "Scenario",
-        "line": 29,
+        "line": 32,
         "name": "Excluir uma nova transação",
         "tags": [
           {
@@ -163,7 +203,7 @@
           },
           {
             "name": "@deletar_transacao",
-            "line": 28
+            "line": 31
           }
         ],
         "type": "scenario",
@@ -175,47 +215,67 @@
             "name": "que esteja logado com uma conta ativa",
             "result": {
               "status": "passed",
-              "duration": 3915000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Dado ",
-            "line": 30,
-            "name": "que esteja na página de extrato",
-            "result": {
-              "status": "passed",
-              "duration": 174000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Quando ",
-            "line": 31,
-            "name": "remover a transação com a descrição \"Movimentacao para exclusao\"",
-            "result": {
-              "status": "passed",
-              "duration": 185000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Então ",
-            "line": 32,
-            "name": "deverá apresentar a mensagem \"sucesso\"",
-            "result": {
-              "status": "passed",
-              "duration": 2130000000
+              "duration": 3995000000
             }
           },
           {
             "arguments": [],
             "keyword": "E ",
+            "line": 10,
+            "name": "que esteja com o banco de dados resetado",
+            "result": {
+              "status": "passed",
+              "duration": 3348000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
             "line": 33,
+            "name": "que esteja na página de extrato",
+            "result": {
+              "status": "passed",
+              "duration": 199000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 34,
+            "name": "remover a transação com a descrição \"Movimentacao para exclusao\"",
+            "result": {
+              "status": "passed",
+              "duration": 152000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 35,
+            "name": "deverá apresentar a mensagem \"sucesso\"",
+            "result": {
+              "status": "passed",
+              "duration": 2124000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 36,
             "name": "deverá apresentar um total \">=\" a 5 transações na página de extratos",
             "result": {
               "status": "passed",
               "duration": 37000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 37,
+            "name": "deverá deslogar da conta",
+            "result": {
+              "status": "passed",
+              "duration": 3379000000
             }
           }
         ]

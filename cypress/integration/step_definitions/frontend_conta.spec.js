@@ -1,28 +1,8 @@
 /// <reference types="cypress" />
 import {Given, When, Then, After, Before} from 'cypress-cucumber-preprocessor/steps'
 
-import Base from '../../pages/base_page'
 import {Head} from '../../pages/head'
 import {Conta} from '../../pages/contas'
-import {Login} from '../../pages/login'
-
-import buildEnv from '../../support/buildEnv'
-
-Given('que esteja logado com uma conta ativa', () => {
-    Base.visitarPagina()
-
-    if(Cypress.env('MockRequest')){
-        // prepara o ambiente com uma "massa de dados" pré-definida de acordo com cada rotas da nossa api
-        buildEnv()
-        Login.fazerLogin('usuario_inexistente', 'qualquer');
-        Head.validaMensagemToast('Bem vindo');
-    }else{
-        Login.fazerLogin('caio@caio', '123');
-        Head.validaMensagemToast('Bem vindo');
-        Head.resetApp()
-        Head.validaMensagemToast('Dados resetados com sucesso!')
-    }
-})
 
 Given(`que tenha uma conta cadastrada com o nome {string}`, (nome_conta) => {
     if(!Cypress.env('MockRequest')){
@@ -35,11 +15,12 @@ Given(`que tenha uma conta cadastrada com o nome {string}`, (nome_conta) => {
 When(`criar uma conta com um nome válido`, () => {
     if(Cypress.env('MockRequest')){
         cy.intercept('POST','/contas',{
-            body: {id: 3,nome:"Conta de Teste",visivel: true,usuario_id: 1}
+            statusCode: 201,
+            fixture: 'mock/post_response_conta_valida.json'
         }).as('postConta')
 
         cy.intercept('GET','/contas',{
-            fixture: 'get_response_contas_atualizadas.json'
+            fixture: 'mock/get_response_contas_atualizadas.json'
         }).as('contas Atualizadas')
     }
     

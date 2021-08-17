@@ -1,0 +1,432 @@
+[
+  {
+    "description": "    Como cliente da aplicação\n    Quero ter acesso a todas as rotas acessíveis para o meu nível de usuário",
+    "keyword": "Funcionalidade",
+    "name": "API",
+    "line": 4,
+    "id": "api",
+    "tags": [
+      {
+        "name": "@funcionalidade_api",
+        "line": 3
+      }
+    ],
+    "uri": "api_barrigarest.feature",
+    "elements": [
+      {
+        "id": "api;criar-conta-para-movimentação",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Criar conta para movimentação",
+        "tags": [
+          {
+            "name": "@funcionalidade_api",
+            "line": 3
+          },
+          {
+            "name": "@api_criar_conta",
+            "line": 12
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja com um token válido",
+            "result": {
+              "status": "passed",
+              "duration": 2032000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "tenha resetado o banco de dados",
+            "result": {
+              "status": "passed",
+              "duration": 213000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 14,
+            "name": "criar uma nova conta com o nome \"Conta qualquer 5\"",
+            "result": {
+              "status": "passed",
+              "duration": 184000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 15,
+            "name": "deve obter como resposta o schema \"api/post_conta_movimentacao\" com status 201",
+            "result": {
+              "status": "passed",
+              "duration": 47000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 16,
+            "name": "deve apresentar no corpo da resposta o conteúdo \"da conta\"",
+            "result": {
+              "status": "passed",
+              "duration": 14000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api;criar-conta-para-movimentação",
+        "keyword": "Scenario",
+        "line": 20,
+        "name": "Criar conta para movimentação",
+        "tags": [
+          {
+            "name": "@funcionalidade_api",
+            "line": 3
+          },
+          {
+            "name": "@api_criar_conta",
+            "line": 12
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja com um token válido",
+            "result": {
+              "status": "passed",
+              "duration": 485000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "tenha resetado o banco de dados",
+            "result": {
+              "status": "passed",
+              "duration": 207000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 14,
+            "name": "criar uma nova conta com o nome \"Conta para alterar\"",
+            "result": {
+              "status": "passed",
+              "duration": 263000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 15,
+            "name": "deve obter como resposta o schema \"api/post_conta_movimentacao\" com status 400",
+            "result": {
+              "status": "passed",
+              "duration": 21000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 16,
+            "name": "deve apresentar no corpo da resposta o conteúdo \"Já existe uma conta com esse nome!\"",
+            "result": {
+              "status": "passed",
+              "duration": 5000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api;atualizar-nome-de-uma-conta",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Atualizar nome de uma conta",
+        "tags": [
+          {
+            "name": "@funcionalidade_api",
+            "line": 3
+          },
+          {
+            "name": "@api_atualizar_conta",
+            "line": 22
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja com um token válido",
+            "result": {
+              "status": "passed",
+              "duration": 461000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "tenha resetado o banco de dados",
+            "result": {
+              "status": "passed",
+              "duration": 238000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 24,
+            "name": "atualizar o nome da conta \"Conta para alterar\" pelo nome \"conta alterada via rest\"",
+            "result": {
+              "status": "passed",
+              "duration": 404000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 25,
+            "name": "deve obter como resposta o schema \"api/put_conta_movimentacao\" com status 200",
+            "result": {
+              "status": "passed",
+              "duration": 12000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 26,
+            "name": "deve apresentar no corpo da resposta o conteúdo \"da conta\"",
+            "result": {
+              "status": "passed",
+              "duration": 6000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api;criar-nova-transação-em-uma-conta",
+        "keyword": "Scenario",
+        "line": 29,
+        "name": "Criar nova transação em uma conta",
+        "tags": [
+          {
+            "name": "@funcionalidade_api",
+            "line": 3
+          },
+          {
+            "name": "@api_criar_transacao",
+            "line": 28
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja com um token válido",
+            "result": {
+              "status": "passed",
+              "duration": 1010000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "tenha resetado o banco de dados",
+            "result": {
+              "status": "passed",
+              "duration": 206000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 30,
+            "name": "criar uma nova transação na conta \"Conta para alterar\"",
+            "result": {
+              "status": "passed",
+              "duration": 404000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 31,
+            "name": "deve obter como resposta o schema \"api/post_transacao\" com status 201",
+            "result": {
+              "status": "passed",
+              "duration": 14000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 32,
+            "name": "deve apresentar no corpo da resposta o conteúdo \"da transação\"",
+            "result": {
+              "status": "passed",
+              "duration": 8000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api;atualizar-o-status-de-uma-transação",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "Atualizar o status de uma transação",
+        "tags": [
+          {
+            "name": "@funcionalidade_api",
+            "line": 3
+          },
+          {
+            "name": "@api_atualizar_saldo_conta",
+            "line": 34
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja com um token válido",
+            "result": {
+              "status": "passed",
+              "duration": 496000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "tenha resetado o banco de dados",
+            "result": {
+              "status": "passed",
+              "duration": 205000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 36,
+            "name": "que o saldo da conta \"Conta para saldo\" esteja com \"534.00\"",
+            "result": {
+              "status": "passed",
+              "duration": 207000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 37,
+            "name": "atualizar o status da transação com a descrição \"Movimentacao 1, calculo saldo\"",
+            "result": {
+              "status": "passed",
+              "duration": 400000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 38,
+            "name": "deve obter como resposta o schema \"api/put_transacao\" com status 200",
+            "result": {
+              "status": "passed",
+              "duration": 24000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 39,
+            "name": "deverá apresentar o saldo atualizado na conta \"Conta para saldo\" com valor \"4034.00\"",
+            "result": {
+              "status": "passed",
+              "duration": 287000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "api;deletar-uma-transação",
+        "keyword": "Scenario",
+        "line": 42,
+        "name": "Deletar uma transação",
+        "tags": [
+          {
+            "name": "@funcionalidade_api",
+            "line": 3
+          },
+          {
+            "name": "@api_delete_transacao",
+            "line": 41
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja com um token válido",
+            "result": {
+              "status": "passed",
+              "duration": 515000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "tenha resetado o banco de dados",
+            "result": {
+              "status": "passed",
+              "duration": 200000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 43,
+            "name": "deletar a transação com a descrição \"Movimentacao para exclusao\"",
+            "result": {
+              "status": "passed",
+              "duration": 409000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 44,
+            "name": "deve obter como resposta o schema \"api/delete_transacao\" com status 204",
+            "result": {
+              "status": "passed",
+              "duration": 22000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

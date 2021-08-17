@@ -19,7 +19,8 @@
     "fs-extra": "^10.0.0",
     "jsonschema": "^1.4.0",
     "multiple-cucumber-html-reporter": "^1.18.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "ajv": "^8.6.1"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,

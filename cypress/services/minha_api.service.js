@@ -20,23 +20,18 @@ export class API extends Rest{
         super.httpRequestWithoutBody('GET', '/reset').its('status').should('be.eq', 200)
     }
 
-    static criarUmaConta(){
-        let body = {nome: "Conta qualquer 5"}
+    static criarUmaConta(nomeConta){
+        let body = {nome: nomeConta}
         return super.httpRequestWithBody('POST', '/contas', body)
     }
 
-    static criarUmaContaDuplicada(){
-        let body = {nome: "Conta para alterar"}
-        return super.httpRequestWithBody('POST', '/contas', body)
+    static getContaPorName_QS(nomeConta){
+        return super.httpRequestWithoutBody('GET', '/contas', {}, {nome: nomeConta})
     }
 
-    static getContaPorName_QS(nomeconta){
-        return super.httpRequestWithoutBody('GET', '/contas', {}, {nome: nomeconta})
-    }
-
-    static atualizarUmaConta(nomeConta){
+    static atualizarUmaConta(nomeConta, novoNome){
         return this.getContaPorName_QS(nomeConta).then(res => {
-            let body = {nome: "conta alterada via rest"}
+            let body = {nome: novoNome}
             super.httpRequestWithBody('PUT', `/contas/${res.body[0].id}`, body)
         })
     }
@@ -88,14 +83,30 @@ export class API extends Rest{
             }
 
             super.httpRequestWithBody('PUT', `/transacoes/${res.body[0].id}`, body)
-                .its('status')
-                .should('be.equal', 200)
         })
     }
 
-    static removerUmaContaDeMovimentacao(descricaoTransacao){
+    static removerUmaTransacao(descricaoTransacao){
         return this.pegarIdTransacaoPorDescricao_QS(descricaoTransacao).then((res) => {
             super.httpRequestWithoutBody('DELETE', `/transacoes/${res.body[0].id}`)
         })
+    }
+
+    static validaCorpoDaResposta(resposta, tipoRetornoEsperado){
+        switch (tipoRetornoEsperado) {
+            case "da conta":
+                expect(resposta.body).to.have.property('id')
+                expect(resposta.body).to.have.property('nome', resposta.body.nome)
+                break;
+
+            case "da transação":
+                expect(resposta.body).to.have.property('id')
+                expect(resposta.body).to.have.property('descricao', resposta.body.descricao)
+                break;
+        
+            default:
+                expect(resposta.body).to.have.property('error', tipoRetornoEsperado)
+                break;
+        }
     }
 }

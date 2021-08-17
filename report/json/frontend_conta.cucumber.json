@@ -1,0 +1,166 @@
+[
+  {
+    "description": "    Como cliente da aplicação\n    Quero ter uma ou mais contas para movimentação",
+    "keyword": "Funcionalidade",
+    "name": "Conta",
+    "line": 4,
+    "id": "conta",
+    "tags": [
+      {
+        "name": "@funcionalidade_conta",
+        "line": 3
+      }
+    ],
+    "uri": "frontend_conta.feature",
+    "elements": [
+      {
+        "id": "conta;criar-conta-para-movimentação",
+        "keyword": "Scenario",
+        "line": 13,
+        "name": "Criar conta para movimentação",
+        "tags": [
+          {
+            "name": "@funcionalidade_conta",
+            "line": 3
+          },
+          {
+            "name": "@criar_conta",
+            "line": 12
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja logado com uma conta ativa",
+            "result": {
+              "status": "passed",
+              "duration": 6122000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "que esteja com o banco de dados resetado",
+            "result": {
+              "status": "passed",
+              "duration": 3361000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 14,
+            "name": "criar uma conta com um nome válido",
+            "result": {
+              "status": "passed",
+              "duration": 755000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 15,
+            "name": "deverá apresentar a mensagem \"Conta inserida com sucesso\"",
+            "result": {
+              "status": "passed",
+              "duration": 2132000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 16,
+            "name": "deverá deslogar da conta",
+            "result": {
+              "status": "passed",
+              "duration": 3365000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "conta;criar-uma-conta-duplicada-para-movimentação",
+        "keyword": "Scenario",
+        "line": 19,
+        "name": "Criar uma conta DUPLICADA para movimentação",
+        "tags": [
+          {
+            "name": "@funcionalidade_conta",
+            "line": 3
+          },
+          {
+            "name": "@criar_conta_invalida",
+            "line": 18
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 9,
+            "name": "que esteja logado com uma conta ativa",
+            "result": {
+              "status": "passed",
+              "duration": 3813000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 10,
+            "name": "que esteja com o banco de dados resetado",
+            "result": {
+              "status": "passed",
+              "duration": 3343000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Dado ",
+            "line": 20,
+            "name": "que tenha uma conta cadastrada com o nome \"Carteira\"",
+            "result": {
+              "status": "passed",
+              "duration": 5000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Quando ",
+            "line": 21,
+            "name": "criar uma conta com um nome que já existe no sistema",
+            "result": {
+              "status": "passed",
+              "duration": 614000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Então ",
+            "line": 22,
+            "name": "deverá apresentar a mensagem \"Erro: Error: Request failed with status code 400\"",
+            "result": {
+              "status": "passed",
+              "duration": 2134000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "E ",
+            "line": 23,
+            "name": "deverá deslogar da conta",
+            "result": {
+              "status": "passed",
+              "duration": 3368000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

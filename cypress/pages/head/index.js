@@ -32,5 +32,12 @@ export class Head extends Base{
             super.clickOnElement(el.MENU.RESETAR)
         })
     }
+
+    static deslogar(){
+        super.esperaExplicita()
+        super.clickOnElement(el.MENU.SETTINGS).then( () => {
+            super.clickOnElement(el.MENU.SAIR)
+        })
+    }
 }
 

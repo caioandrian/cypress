@@ -43,6 +43,11 @@ const buildEnv = () => {
             ]
         }
     ).as('movimentacoes')
+
+    cy.intercept('GET','/reset',{
+        statusCode: 200
+    }
+    ).as('reset')
 }
 
 export default buildEnv

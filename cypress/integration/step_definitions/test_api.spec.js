@@ -1,58 +1,54 @@
 /// <reference types="cypress" />
+import {Given, When, Then, After, Before, And} from 'cypress-cucumber-preprocessor/steps'
 
 import {API} from '../../services/minha_api.service'
 
-describe('Cypress Integration API', () => {
-    before(()=>{
-        API.getToken('caio@caio', '123')
-    })
+Given(`que esteja com um token válido`, ()=>{
+    API.getToken('caio@caio', '123')
+})
 
-    beforeEach(()=>{
-        API.resetAppByApi();
-    })
+Given(`que o saldo da conta {string} esteja com {string}`, (nomeConta, valor)=>{
+    API.validaSaldoConta(nomeConta, valor);
+})
 
-    it('Deve criar uma nova conta para movimentacao', () => {
-        API.criarUmaConta().as('response')
+Given(`tenha resetado o banco de dados pela rota`, ()=>{
+    API.resetAppByApi();
+})
 
-        cy.get('@response').then((res) => {
-            expect(res.status).to.be.equal(201)
-            expect(res.body).to.have.property('id')
-            expect(res.body).to.have.property('nome', "Conta qualquer 5")
-        })
-    })
+When('criar uma nova conta com o nome {string}', (tipoNome) => {
+    API.criarUmaConta(tipoNome).as('response')
+})
 
-    it('Não deve criar uma conta com mesmo nome', () => {
-        API.criarUmaContaDuplicada().as('response')
+When('atualizar o nome da conta {string} pelo nome {string}', (nome_atual_conta, novo_nome) => {
+    API.atualizarUmaConta(nome_atual_conta, novo_nome).as('response')
+})
 
-        cy.get('@response').then((res) => {
-            expect(res.status).to.be.equal(400)
-            expect(res.body.error).to.be.eq('Já existe uma conta com esse nome!')
-        })
-    })
+When('criar uma nova transação na conta {string}', (nomeConta) => {
+    API.criarUmaTransacaoNaConta(nomeConta).as('response')
+})
 
-    it('Deve atualizar o nome de uma conta', () => {
-        API.atualizarUmaConta('Conta para alterar').as('response')
+When('deletar a transação com a descrição {string}', (descricao_transacao) => {
+    API.removerUmaTransacao(descricao_transacao).as('response')
+})
 
-        cy.get('@response').its('status').should('be.equal', 200)
-        cy.get('@response').its('body.nome').should('be.eq', 'conta alterada via rest')
-    })
-   
-    it('Deve criar uma nova transação na conta', () => {
-        API.criarUmaTransacaoNaConta('Conta para alterar').as('response')
+When('atualizar o status da transação com a descrição {string}', (descricaoTransacao) => {
+    API.atualizaUmaTransacaoPorDescricao(descricaoTransacao).as('response')
+})
 
-        cy.get('@response').its('status').should('be.equal', 201)
-        cy.get('@response').its('body.id').should('exist')
-    })
+Then(`deverá apresentar o saldo atualizado na conta {string} com valor {string}`, (nomeConta, valor) => {
+    API.validaSaldoConta(nomeConta, valor);
+})
 
-    it('Deve apresentar o saldo atualizado da conta', () => {
-        API.validaSaldoConta('Conta para saldo', '534.00');
-        API.atualizaUmaTransacaoPorDescricao("Movimentacao 1, calculo saldo")
-        API.validaSaldoConta('Conta para saldo', '4034.00');
-    })
-
-    it('Deve remover uma conta de movimentacao', () => {
-        API.removerUmaContaDeMovimentacao("Movimentacao para exclusao").as('response')
-        
-        cy.get('@response').its('status').should('be.equal', 204)
+Then(`deve apresentar no corpo da resposta o conteúdo {string}`, (tipoRetornoEsperado) => {
+    cy.get('@response').then((res) => {
+        API.validaCorpoDaResposta(res, tipoRetornoEsperado)
     })
 })
+
+Then(`deve obter como resposta o schema {string} com status {int}`, (schema, status) => {
+	cy.get('@response').then(res => {
+        cy.validacaoDeContrato(res, schema, status).then(valid => {
+            expect(valid).to.be.true;
+        })
+    })
+});
