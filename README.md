@@ -1,9 +1,7 @@
 # curso-cypress
 conteúdo do curso realizado na Udemy.
 
-**Projeto Atualizado** em 17/08/2021!!
-- adicionado page object, service object, validação de contrato, gherkin, cucumber.
-- atualização do cy.server e cy.route com cy.intercept
+**PROJETO ATUALIZADO** em 17/08/2021!!
 
 #### **Frontend**:
 - website: https://barrigareact.wcaquino.me
@@ -59,8 +57,6 @@ conteúdo do curso realizado na Udemy.
 ##### Dockerfile & Jenkinsfile:
 - sim
 ##### Validação de Contrato com AJV:
-- sim
-##### Mapa Mental:
 - sim
 
 <br/>
