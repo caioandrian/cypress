@@ -19,14 +19,14 @@ conteúdo do curso realizado na Udemy.
 ### ---- Lista de Funcionalidades (Frontend) ----
 <br/>
 
-**Conta para movimentação**
-- Criar **(esquema de cenário)**
-- Atualizar (pendente)
+- Criar conta para movimentação **(esquema de cenário)**
+- Atualizar conta para movimentação (pendente)
 
-**Transação / Movimentação**
-- Criar **(esquema de cenário)** 
-- Editar
-- Excluir
+<br/>
+
+- Criar transação **(esquema de cenário)** 
+- Editar transação
+- Excluir transação
 
 <br/>
 
@@ -46,18 +46,12 @@ conteúdo do curso realizado na Udemy.
 ### ---- Diferenciais no projeto ----
 <br/>
 
-##### Page Object e Service Object:
-- sim
-##### BDD / Gherkin / Cucumber:
-- sim
-##### Com Mock / Stub:
-- sim, usando cy.intercept e variáveis de ambiente (build.env).
-##### Massa de Dados Fixas (json / cy.fixture):
-- sim, resposta das rotas e validação de contrato ajv.
-##### Dockerfile & Jenkinsfile:
-- sim
-##### Validação de Contrato com AJV:
-- sim
+- Page Object e Service Object:
+- BDD / Gherkin / Cucumber:
+- Com Intercept / Mock / Stub:
+- Massa de Dados Fixas (json / cy.fixture):
+- Dockerfile & Jenkinsfile:
+- Validação de Contrato com AJV:
 
 <br/>
 
@@ -96,9 +90,11 @@ conteúdo do curso realizado na Udemy.
     } }
 
 **Como simular o teste usando os "dados falsos"?**
-> No arquivo .json dentro da pasta config
+<br/>
 
-> Alterar "MockRequest" para true (é preciso reiniciar o cypress)
+No arquivo .json dentro da pasta config
+
+Alterar "MockRequest" para true (é preciso reiniciar o cypress)
 
 <br/>
 
