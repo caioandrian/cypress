@@ -100,14 +100,15 @@ conteúdo do curso realizado na Udemy.
     } }
 
 **Como simular o teste usando os "dados falsos"?**
-> No arquivo .json dentro da pasta config
+<br/>
 
-> Alterar "MockRequest" para true (é preciso reiniciar o cypress)
+No arquivo .json dentro da pasta config
+
+Alterar "MockRequest" para true (é preciso reiniciar o cypress)
 
 <br/>
 
 ### ---- DOCKER / JENKINS ----
-
 <br/>
 
 **Como rodar o teste usando o Docker Localmente**
@@ -168,7 +169,7 @@ Configurar a PIPELINE do Jenkins: Pipeline script from SCM
 
 <br/>
 
-Como usar o Jenkins com tags: (precisa ser testado)
+**Como usar o Jenkins com tags: (precisa ser testado)**
 
 Jenkinsfile
 
