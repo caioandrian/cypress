@@ -46,17 +46,22 @@ conteúdo do curso realizado na Udemy.
 ### ---- Diferenciais no projeto ----
 <br/>
 
-##### Page Object e Service Object:
+**Page Object e Service Object:**
 - sim
-##### BDD / Gherkin / Cucumber:
+
+**BDD / Gherkin / Cucumber:**
 - sim
-##### Com Mock / Stub:
+
+**Com Mock / Stub:**
 - sim, usando cy.intercept e variáveis de ambiente (build.env).
-##### Massa de Dados Fixas (json / cy.fixture):
+
+**Massa de Dados Fixas (json / cy.fixture):**
 - sim, resposta das rotas e validação de contrato ajv.
-##### Dockerfile & Jenkinsfile:
+
+**Dockerfile & Jenkinsfile:**
 - sim
-##### Validação de Contrato com AJV:
+
+**Validação de Contrato com AJV:**
 - sim
 
 <br/>
