@@ -1,5 +1,5 @@
-# Curso de Cypress Udemy
-Conteúdo básico do curso + atualizações feitas por mim.
+# Cypress
+Conteúdo básico do curso (Udemy) + atualizações feitas por mim.
 * Nome do Curso: Testes de aplicações modernas com Cypress
 * Professor: Francisco Wagner Costa Aquino
 * Histórico de atualizações: (https://github.com/caioandrian/curso_cypress/releases)
